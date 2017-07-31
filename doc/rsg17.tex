@@ -1,0 +1,497 @@
+\documentclass[12pt, pdf, table]{beamer}  %, t
+
+%\usetheme{default} 
+\usetheme{Boadilla} % for boxed titles 
+%\usefonttheme{serif} 
+%\usecolortheme{beaver}  
+%\usecolortheme[RGB={170,50,50}]{structure} 
+
+\definecolor{colorik}{RGB}{40,30,20}
+\definecolor{redik}{RGB}{200,50,50}
+\definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
+\definecolor{darkblue}{RGB}{107,174,214} % lightblue for dark background
+%\definecolor{darkblue}{RGB}{57,104,144}
+
+\setbeamercolor{normal text}{fg=colorik} 
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{footline}{} %[frame number]{}
+\setbeamertemplate{frametitle}[default][center]
+
+% Theme from Karl Broman (biostat.wisc.edu/~kbroman)
+% named colors
+\definecolor{offwhite}{RGB}{249,242,215}
+\definecolor{foreground}{RGB}{255,255,255}
+\definecolor{background}{RGB}{24,24,24}
+\definecolor{title}{RGB}{200,50,50}
+\definecolor{subtitle}{RGB}{7,7,7}
+\definecolor{gray}{RGB}{155,155,155}
+\definecolor{hilight}{RGB}{102,255,204}
+\definecolor{vhilight}{RGB}{255,111,207}
+\definecolor{lolight}{RGB}{155,155,155}
+
+\setbeamerfont{frametitle}{size=\normalsize}
+\setbeamercolor{titlelike}{bg=gray!7} % background} % to get rid of the boxes in titles
+\setbeamercolor{block title}{bg=red!100!blue!70!black!90,fg=white}
+\setbeamercolor{block body}{bg=red!60!green!10,fg=black}
+
+\setbeamercolor{titlelike}{fg=title}
+\setbeamercolor{subtitle}{fg=subtitle}
+%\setbeamercolor{institute}{fg=gray}
+\setbeamercolor{normal text}{fg=foreground,bg=background}
+\setbeamercolor{item}{fg=foreground} % color of bullets
+\setbeamercolor{subitem}{fg=gray}
+\setbeamercolor{itemize/enumerate subbody}{fg=gray}
+\setbeamertemplate{itemize subitem}{{\textendash}}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
+
+\setbeamertemplate{section in toc}[ball unnumbered]
+\setbeamertemplate{subsection in toc}[ball unnumbered]
+
+% page number
+%\setbeamertemplate{footline}{%
+%    \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{gray}
+%          \scriptsize\insertframenumber}}}\hspace*{5pt}}
+
+%\usepackage{gfsartemisia}
+%\usepackage{cmuconcrete}
+%\usepackage{texgyreadventor}
+%\usepackage{biolinum}
+\usepackage{libertine}
+\usepackage[T1]{fontenc}
+
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\usepackage{threeparttable}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{xcolor} % [table] gives option clash - moved to documentclass, probably due to multirow or tikz
+
+\usepackage{ulem} % for strike text
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.callouts,decorations.pathmorphing,shadows}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{shapes.multipart}
+
+%\usepackage{fancybox}
+
+\title{Should I stay or should I go, NOW?}
+\subtitle{\textit{A perspective based on my journey in the academia}}
+\author{Emre G\"{u}ney} % , PhD
+%\institute{
+    %\textit{Beatriu de Pin\'{o}s Fellow \\ Structural Bioinformatics and Network Biology Lab (SBNB)} \\ 
+%    \footnotesize
+%    Institute for Research in Biomedicine (IRB) \\ Barcelona, Spain \\ 
+%}
+\date{RSG-Turkey Symposium, June 30$^{th}$, 2017} 
+%\titlegraphic{\includegraphics[scale=0.3]{/home/eguney/Dropbox/img/logo/irb.jpg}}
+
+\begin{document} 
+
+% Declare layers
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+%\newcommand{\convertpath}[1]{/home/emre/Dropbox/img/#1}
+\newcommand{\convertpath}[1]{/Users/eguney/Dropbox/img/#1}
+\newcommand{\subtle}[1]{\textcolor{gray!50}{#1}}
+
+% title slide
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{\titlepage} 
+}
+
+
+\AtBeginSection[]
+{
+ \begin{frame}
+   \frametitle{Outline}     \small
+       \tableofcontents[currentsection, hideallsubsections] % hideothersubsections
+     \normalsize
+  \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+ \begin{frame}
+   \frametitle{Menu}     \small
+       \tableofcontents[currentsection, hideothersubsections, sectionstyle=show/shaded, subsectionstyle=show/shaded] 
+     \normalsize
+  \end{frame}
+}
+
+
+\frame
+{
+    %\frametitle{Perception}
+    \includegraphics[scale=0.55]{\convertpath{external/irobot.jpg}} \\
+    \uncover<2->{
+    \begin{tikzpicture}[overlay,remember picture]
+        \pgftransformshift{\pgfpointanchor{current page}{center}}
+	\node[rectangle, draw=gray, thick, fill=gray!20, opacity=0.8] at (2.5, 1) { 
+	\includegraphics[width=0.5\paperwidth]{\convertpath{external/cleaning_modes.jpeg}}} ;
+    \end{tikzpicture}
+    }
+    % \Huge \normalsize 
+    \centering
+    \vspace{-0.5cm}
+    \uncover<2->{
+    \textcolor{redik}{Disclaimer:} Opinions are my own... \\
+    }
+    \uncover<1->{
+    \bigskip
+    \bigskip
+    \hfill \textit{\scriptsize Images from \textcolor{darkblue}{irobot.com} and \textcolor{darkblue}{gearbest.com}} 
+    }
+}
+
+
+\frame
+{
+    \frametitle{Who am I?}
+    \begin{columns}
+    \begin{column}{0.3\textwidth}
+    %Where do I see myself in 5 years?
+    \begin{figure}
+    \includegraphics[width=0.49\paperwidth]{\convertpath{emre_map.png}}
+    \end{figure}
+    \end{column}
+    \begin{column}{0.7\textwidth}
+    \frametitle{Who am I?}
+    \hfill \textcolor{darkblue}{BdP fellow} at \textit{Inst. for Biomedical Research} \\ % \textcolor{redik}{2017} \\
+    \hfill \& \textcolor{darkblue}{Consultant} at \textit{DZZOM} \textcolor{redik}{2017} \\
+    \hfill \hrulefill \\
+    \hfill \textcolor{darkblue}{Postdoc} at \textit{Northeastern Uni.} \\ % \textcolor{redik}{2015} \\
+    \hfill \& \textit{Dana-Farber Cancer Inst.} \textcolor{redik}{2015} \\
+    \hfill \hrulefill \\
+    \hfill \textcolor{darkblue}{PhD} at \textit{Uni. of Pompeu Fabra} \textcolor{redik}{2012} \\ % in Biomedicine 
+    \hfill \hrulefill \\
+    \hfill \textcolor{darkblue}{MS} at \textit{Koc Uni.} \textcolor{redik}{2007} \\ % in Computer Engineering 
+    \hfill \hrulefill \\
+    \hfill \textcolor{darkblue}{BS} at \textit{METU} \textcolor{redik}{2005} \\ % in Computer Engineering 
+    \hfill \hrulefill \\
+    \hfill Years in academia: \textcolor{redik}{10+} \\
+    \end{column}
+    \end{columns}
+    \bigskip
+    \bigskip
+    \hfill \textcolor{darkgreen!70}{\it emreguney.net} %\url{emreguney.net}}
+    \pause
+    \begin{tikzpicture}[overlay,remember picture]
+        \pgftransformshift{\pgfpointanchor{current page}{center}}
+	\node[rectangle, draw=gray, thick, fill=gray!20, opacity=1, inner sep=7pt, minimum width=0.3\paperwidth] at (-3, -2) { \textit{\textcolor{darkblue}{Where do I see myself in 5 years? }}};
+    \end{tikzpicture}
+}
+
+
+\frame
+{
+    %\frametitle{}
+    \begin{figure}
+    \includegraphics[width=0.9\paperwidth]{\convertpath{external/hr_question.jpg}}
+    \end{figure}
+    \uncover<2->{
+    \begin{tikzpicture}[overlay,remember picture]
+        \pgftransformshift{\pgfpointanchor{current page}{center}}
+	\node[rectangle, draw=gray, thick, fill=gray!60, opacity=0.9, inner sep=7pt, minimum width=0.6\paperwidth] at (0, 0) { 
+	    \begin{tabular}{l}
+		\textcolor{darkblue}{HR}: ``This is going to be your first \textit{\textcolor{redik}{real}} job.'' \\
+		\\
+		\textcolor{darkblue}{EG}: ``!?@*@?!''
+	    \end{tabular}
+	};
+    \end{tikzpicture}
+    }
+    \uncover<3->{
+    \centering
+    %\textcolor{redik}{Communication} is the key! \\
+    Convince people that what you do is \textcolor{redik}{cool} and \textcolor{redik}{relevant}! \\
+    }
+    \bigskip
+    \uncover<1->{
+    \hfill \textit{\scriptsize Image from \textcolor{darkblue}{humanresourcesonline.net}} 
+    }
+}
+
+
+\frame
+{
+    \begin{figure}
+    \includegraphics[width=0.9\paperwidth]{\convertpath{external/quote_love_do_love.jpg}}
+    \end{figure}
+    \uncover<2->{
+    \centering
+    %Be \textcolor{redik}{proactive}! \\
+    Incorporate what you \textcolor{redik}{love} into your work! \\
+    }
+    \bigskip
+    \uncover<1->{
+    \hfill \textit{\scriptsize Image from \textcolor{darkblue}{quotefancy.com}} 
+    }
+}
+
+
+\frame 
+{
+    \frametitle{Making decisions: Tabularize}
+    \centering
+    \scalebox{0.75}{
+    \begin{tabular}{lp{2.2cm}p{2.2cm}cc}
+    \hline
+    \textbf{Decision} & \textbf{Personal satisfaction} & \textbf{Work Environment} & \textbf{Salary} & ... \\ 
+    % Ego
+    \hline
+    Do a Masters & 4 & 4 & 2 & \\
+    Do a PhD & 5 & 4 & 3 & \\
+    Do an internship & 2 & 3 & 1 & \\
+    Go for a job in my expertise & 4 & 3 & 4 & \\
+    Go for a job out of my expertise & 3 & 2 & 5 & \\
+    \hline
+    \end{tabular}
+    }
+}
+
+
+\frame 
+{
+    \frametitle{Making decisions: Uncertainty}
+    \scalebox{0.75}{
+    \begin{tabular}{lp{2.2cm}p{2.2cm}ccc}
+    \hline
+    \textbf{Decision} & \textbf{Personal satisfaction} & \textbf{Work Environment} & \textbf{Salary} & ... & \textbf{\textcolor{redik}{Uncertainty}} \\ 
+    % Ego
+    \hline
+    Do a Masters & 4 & 4 & 2 & & \textcolor{redik}{X} \\
+    Do a PhD & 5 & 4 & 3 & & \textcolor{redik}{X} \\
+    Do an internship & 2 & 3 & 1 & & \textcolor{redik}{X} \\
+    Go for a job in my expertise & 4 & 3 & 4 & & \textcolor{redik}{X} \\
+    Go for a job out of my expertise & 3 & 2 & 5 & & \textcolor{redik}{X} \\
+    \hline \\
+    \end{tabular}
+    }
+    \bigskip
+    \uncover<1->{
+	X: A random variable following Gaussian distribution, $N(\mu, \sigma)$ \\
+    }
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+    \uncover<2->{
+    \centering
+    \includegraphics[width=0.35\paperwidth]{\convertpath{external/timer.jpg}} \\
+    \hfill \textit{\scriptsize Image from \textcolor{darkblue}{wikimedia.org}} 
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    }
+    \uncover<2->{
+	Estimating \textcolor{redik}{X} \\
+    }
+    \uncover<3->{
+	\bigskip
+	\textcolor{darkblue}{Iterate} over different scenarios using a \textcolor{darkblue}{timer}
+    \end{column}
+    \end{columns}
+    }
+}
+
+
+\frame
+{
+    \frametitle{Making decisions - take 2}
+    \begin{itemize}	
+	\itemsep 12pt
+	\item Inkscape | PhotoShop | PowerPoint | ...
+	\item R ggplot2 | python matplotlib | Excel | ...
+	\item Vim | Emacs | TextWrangler | ... 
+	\item Latex / beamer | Word / PowerPoint | Prezl | ...
+	\item Zotero | EndNote | Mendeley | ... 
+    \end{itemize}
+}
+
+
+\frame[b]
+{
+    \frametitle{Making decisions: Graphify}
+    \begin{tikzpicture}[overlay,remember picture]
+        \pgftransformshift{\pgfpointanchor{current page}{center}}
+	\node[circle, draw=gray, thick, fill=gray!20, text=darkblue, text centered, text width=0.1\textwidth, minimum width=2cm] (u) at (-2.5, 0) { Vim } ;
+	\uncover<2->{
+	\node[circle, draw=gray, thick, fill=gray!40, text=white, anchor=center, text width=0.1\textwidth, minimum width=2cm] (u1) at (0, -3) { Interoperable } ;
+	\node[circle, draw=gray, thick, fill=gray!40, text=white, text centered, text width=0.1\textwidth, minimum width=2cm] (u2) at (-5, -3) { Mouse-free } ;
+	\node[circle, draw=gray, thick, fill=gray!40, text=white, text centered, text width=0.1\textwidth, minimum width=2cm] (u3) at (0, 2.5) { Latex friendly } ;
+	\node[circle, draw=gray, thick, fill=gray!40, text=redik, text centered, text width=0.1\textwidth, minimum width=2cm] (u4) at (-5, 2.5) { Unintuitive } ;
+	\foreach \source/ \dest in {u/u1, u/u2, u/u3, u/u4}
+	    \path[draw, ultra thick, ->] (\source) -- (\dest);
+	}
+	\uncover<3->{
+	\node[circle, draw=gray, thick, fill=gray!20, text=darkblue, anchor=center, text width=0.1\textwidth, minimum width=2cm] (v) at (2.5, 0) { TextWrangler } ;
+	}
+	\uncover<4->{
+	\node[circle, draw=gray, thick, fill=gray!40, text=white, text centered, text width=0.1\textwidth, minimum width=2cm] (v1) at (5, 2.5) { Intuitive } ;
+	\node[circle, draw=gray, thick, fill=gray!40, text=redik, text centered, text width=0.1\textwidth, minimum width=2cm] (v2) at (5, -3) { Not so powerful } ;
+	\foreach \source/ \dest in {v/v1, v/v2, v/u3}
+	    \path[draw, ultra thick, ->] (\source) -- (\dest);
+	}
+    \end{tikzpicture}
+    \pause
+    \centering
+    Extend to more levels to incorporate additional dependencies
+}
+
+
+\frame
+{
+    \frametitle{Bonus: My productivity tips}
+    \begin{itemize}	
+	\itemsep 12pt
+	\item Text / coding / presentation: \textcolor{darkblue}{Vim} | \textcolor{darkblue}{Latex} | \textcolor{darkblue}{LibreOffice} | \textcolor{darkblue}{Zotero}
+	    \pause
+	\item Programming: \textcolor{darkblue}{Python} (file processing and scripting) | \textcolor{darkblue}{R} (data analysis and visualization)
+	    \pause
+	\item Visualization: \textcolor{darkblue}{Inkscape} | \textcolor{darkblue}{Cytoscape} 
+	    \pause
+	\item Version control / backup: \textcolor{darkblue}{Git} | \textcolor{darkblue}{Github} | \textcolor{darkblue}{Dropbox} 
+	    \pause
+	\item Web page / adhoc computing: \textcolor{darkblue}{github.io} | \textcolor{darkblue}{Gcloud}
+    \end{itemize}
+}
+    
+
+\frame
+{
+    \frametitle{Bonus: My productivity tips - cont'd}
+    \begin{itemize}
+	\item Project folder structure:
+	\begin{itemize}	
+	\item \textcolor{darkblue}{src/} Source code, must have: README.md | .gitignore | config.ini
+	\item \textcolor{darkblue}{doc/} Manuscripts, presentations, related articles
+	\item \textcolor{darkblue}{data/} Data used in the project
+	\end{itemize}
+	\bigskip
+	\item Backing up \textit{essentials}:
+	\begin{itemize}	
+	\item Make \textcolor{darkblue}{src} as an upstream git repository residing @ \textcolor{darkblue}{Dropbox}
+	\item Make \textcolor{darkblue}{src} publicly available @ \textcolor{darkblue}{Github} (unless needs to be confidential)
+	\item Keep \textcolor{darkblue}{doc} in \textcolor{darkblue}{Dropbox} and make it symbolic link in the project
+	\end{itemize}
+    \end{itemize}
+}
+
+
+\frame
+{
+    \frametitle{\sout{Take home messages} Patterns in successful people}
+    %Try to
+    %\bigskip
+    \begin{itemize}	
+	\itemsep 12pt
+	\item \textcolor{darkblue}{do} what they \textcolor{redik}{love}
+	\pause
+	\item \textcolor{redik}{love} what they \textcolor{darkblue}{do}
+	\pause
+	\item are \textcolor{darkblue}{communicative} %: convince people that what they do is \textcolor{redik}{cool}
+	\pause
+	\item are \textcolor{darkblue}{proactive} %: incorporate what they \textcolor{redik}{love} into their work
+    \end{itemize}
+}
+
+
+\frame
+{
+    %\frametitle{Personal}
+    \includegraphics[scale=0.55]{\convertpath{external/irobot.jpg}} \\
+    \begin{tikzpicture}[overlay,remember picture]
+        \pgftransformshift{\pgfpointanchor{current page}{center}}
+	\node[rectangle, draw=gray, thick, fill=gray!20, opacity=0.8] at (2.5, 1) { 
+	\includegraphics[width=0.5\paperwidth]{\convertpath{external/cleaning_modes.jpeg}}} ;
+	\uncover<2->{
+	    \node[rectangle, draw=gray, thick, text=redik, fill=gray!30, opacity=1, minimum width=0.2\paperwidth, minimum height=0.2\paperheight] at (2.75, 1.25) { \Huge ? } ;
+	}
+    \end{tikzpicture}
+    % \Huge \normalsize 
+    \centering
+    \vspace{-0.5cm}
+    \uncover<2->{
+    \textcolor{redik}{It is all personal in the end...} \\
+    }
+    \bigskip
+    \bigskip
+    \hfill \textit{\scriptsize Images from \textcolor{darkblue}{irobot.com} and \textcolor{darkblue}{gearbest.com}} 
+}
+
+
+\frame
+{
+    %\frametitle{Personal}
+    %\centering
+    %\includegraphics[scale=0.55]{\convertpath{external/enjoy_the_ride.jpg}} \\
+    \begin{tikzpicture}[overlay,remember picture]
+        \pgftransformshift{\pgfpointanchor{current page}{center}}
+	\node[rectangle] at (0, 0) { 
+	\includegraphics[width=\paperwidth, height=\paperheight]{\convertpath{external/enjoy_the_ride.jpg}} };
+	\node[rectangle, text=black] at (3.5, -4.5) { \textit{\scriptsize Image by Damian Davila from theinertia.com} }; % \textcolor{darkblue}{}
+    \end{tikzpicture}
+}
+
+
+
+\frame
+{
+    \begin{tikzpicture}[overlay,remember picture]
+        \pgftransformshift{\pgfpointanchor{current page}{center}}
+	\node[rectangle, fill=black, opacity=0.85, scale=50] at (0, 0) { };
+	\node[rectangle, fill=gray!7, opacity=1, drop shadow, rounded corners, text centered, minimum width=0.95\paperwidth, minimum height=0.1\paperheight] at (0, 0) { \large{\color{darkgreen!70}\textit{Best of luck!}}};
+    \end{tikzpicture}
+}
+
+
+\begin{comment}
+
+\frame
+{
+    \frametitle{Decision making}
+    \begin{itemize}	
+	\itemsep 12pt
+	\item \textcolor{darkblue}{Inkscape} | PhotoShop | PowerPoint | ...
+	\item \textcolor{darkblue}{R ggplot2} | python matplotlib | Excel | ...
+	\item \textcolor{darkblue}{Vim} | Emacs | TextWrangler | ... 
+	\item \textcolor{darkblue}{Latex / beamer} | Word / PowerPoint | Prezl 
+	\item \textcolor{darkblue}{Zotero} | EndNote | Mendeley | ... 
+    \end{itemize}
+}
+
+
+\frame
+{
+    \frametitle{Generic}
+
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+
+
+    \end{column}
+    \begin{column}{0.5\textwidth}
+
+
+    \end{column}
+    \end{columns}
+
+    \smallskip
+
+    \begin{itemize}	
+	\itemsep 12pt
+	\item
+	\pause
+    \end{itemize}
+}
+
+\end{comment}
+
+\end{document}
+
