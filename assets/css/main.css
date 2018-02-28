@@ -2449,7 +2449,8 @@
 /* Header */
 
 	#header {
-		background: #4acaa8;
+		/* background: #4acaa8; */
+		background: #4ab;
 		color: #d1f1e9;
 		height: 100%;
 		position: fixed;
